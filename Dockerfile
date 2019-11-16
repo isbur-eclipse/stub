@@ -1,11 +1,10 @@
-FROM quay.io/eclipse/che-nodejs10-ubi:nightly
+FROM quay.io/eclipse/che-nodejs8-centos:nightly
 
 USER root
 
 RUN npm install -g yarn 
-RUN yarn global add clasp jsdoc
+RUN yarn global add expo-cli
 
 RUN yum install -y python3
-RUN pip3 install sphinx-js sphinx-markdown-builder
 
 RUN git config --global credential.helper store 
